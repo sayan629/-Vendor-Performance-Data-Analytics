@@ -1,0 +1,34 @@
+# Jupyter Notebook
+.ipynb_checkpoints/
+.virtual_documents/
+
+# Local / generated data
+data/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter runtime
+.jupyter/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
