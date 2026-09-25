@@ -1,20 +1,29 @@
-# Jupyter Notebook
-.ipynb_checkpoints/
-.virtual_documents/
-
-# Local / generated data
-data/
-
-# Python cache
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
+*.pyo
 
 # Virtual environments
 .venv/
 venv/
 env/
 ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents/
+
+# Logs
+logs/
+*.log
+
+# Local database
+*.db
+*.sqlite
+*.sqlite3
+
+# Data files
+data/
 
 # Environment variables / secrets
 .env
@@ -24,11 +33,3 @@ ENV/
 # OS files
 .DS_Store
 Thumbs.db
-
-# Jupyter runtime
-.jupyter/
-
-# Python packaging
-*.egg-info/
-dist/
-build/
