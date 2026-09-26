@@ -1,6 +1,7 @@
 import sqlite3
 import pandas as pd
 import logging
+from ingestion_db import ingest_db
 
 logging.basicConfig(
     filename="logs/get_vendor_summary.log",
@@ -127,3 +128,20 @@ def clean_data(df):
     )
 
     return df
+
+if __name__ == "__main__":
+
+    # Creating database connection
+    conn = sqlite3.connect("inventory.db")
+
+    logging.info("Creating Vendor Summary Table.....")
+    summary_df = create_vendor_summary(conn)
+    logging.info(summary_df.head())
+
+    logging.info("Cleaning Data.....")
+    clean_df = clean_data(summary_df)
+    logging.info(clean_df.head())
+
+    logging.info("Ingesting data.....")
+    ingest_db(clean_df,"vendor_sales_summary",conn)
+    logging.info("Completed")
