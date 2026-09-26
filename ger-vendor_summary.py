@@ -46,4 +46,29 @@ def create_vendor_summary(conn):
                 SUM(ExciseTax) AS TotalExciseTax
             FROM sales
             GROUP BY VendorNo, Brand
-        )            
+        )  
+
+        SELECT
+            ps.VendorNumber,
+            ps.VendorName,
+            ps.Brand,
+            ps.Description,
+            ps.PurchasePrice,
+            ps.ActualPrice,
+            ps.Volume,
+            ps.TotalPurchaseQuantity,
+            ps.TotalPurchaseDollars,
+            ss.TotalSalesQuantity,
+            ss.TotalSalesDollars,
+            ss.TotalSalesPrice,
+            ss.TotalExciseTax,
+            fs.FreightCost
+        FROM PurchaseSummary ps
+        LEFT JOIN SalesSummary ss
+            ON ps.VendorNumber = ss.VendorNo
+            AND ps.Brand = ss.Brand
+        LEFT JOIN FreightSummary fs
+            ON ps.VendorNumber = fs.VendorNumber
+        ORDER BY ps.TotalPurchaseDollars DESC""",conn)
+
+        return vendor_sales_summary
