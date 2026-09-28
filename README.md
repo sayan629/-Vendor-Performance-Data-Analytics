@@ -20,6 +20,8 @@
 
 ---
 
+open: **https://a4zqqnqkpgdemf2xu9dcw5.streamlit.app/**
+
 ## 🌈 Overview
 
 This project answers a simple business question: **which vendors and brands make us money, and which ones drag us down?**
