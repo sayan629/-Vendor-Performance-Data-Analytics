@@ -22,8 +22,6 @@ logs/
 *.sqlite
 *.sqlite3
 
-# Data files
-data/
 
 # Environment variables / secrets
 .env
@@ -33,3 +31,23 @@ data/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Large raw datasets
+data/sales.csv
+data/purchases.csv
+data/begin_inventory.csv
+data/end_inventory.csv
+
+# Database
+*.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
